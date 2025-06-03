@@ -1,4 +1,3 @@
-export { MatchAltert } from "./MatchAlert";
-export { PetCard } from "./PetCard";
-export { PetsList } from "./PetsList";
-
+export { MatchAltert } from './MatchAlert';
+export { PetCard } from './PetCard';
+export { PetsList } from './PetsList';
