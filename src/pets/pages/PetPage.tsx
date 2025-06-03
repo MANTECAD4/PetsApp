@@ -19,7 +19,7 @@ export const PetPage = () => {
       navigate(-1)
     }
 
-  const petImgUrl = `${import.meta.env.BASE_URL}assets/pets-images/${currentPet.id}.jpg`;
+    const petImgUrl = `${import.meta.env.BASE_URL}assets/pets-images/${currentPet.id}.jpg`;
 
   return (
     <div className = "row mt-3 animate__animated animate__fadeInLeft">
