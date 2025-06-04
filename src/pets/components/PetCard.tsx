@@ -18,10 +18,13 @@ export const PetCard = ({ pet }: Props) => {
 					</div>
 					<div className="col-7">
 						<div className="card-body">
-							<h5 className="card-title"> {pet.name} </h5>
+							<h6 className="card-title"> {pet.name} </h6>
 							<hr />
 							<h6 className="card-text"> {pet.origin} </h6>
-							<p className="card-text"> {pet.temperament.join(', ')} </p>
+							<p className="card-text">
+								{' '}
+								<small>{pet.temperament.join(', ')}</small>{' '}
+							</p>
 							<p className="card-text">
 								<small className="text-muted">Size: {pet.size}</small>
 							</p>

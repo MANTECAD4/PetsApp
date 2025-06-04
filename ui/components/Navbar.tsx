@@ -1,15 +1,17 @@
-import { Link, NavLink /* , useNavigate */ } from 'react-router';
+import { useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router';
+import { AuthContext } from '../../src/auth/context/AuthContext';
 
 export const Navbar = () => {
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 
-	// // const onLogOut = () => {
-	// //     navigate('/login',
-	// //         {
-	// //             replace: true
-	// //         }
-	// //     );
-	// // }
+	const { authState } = useContext(AuthContext);
+
+	const onLogOut = () => {
+		navigate('/login', {
+			replace: true,
+		});
+	};
 
 	return (
 		<nav className="container navbar navbar-expand-sm navbar-dark bg-dark mt-3 rounded">
@@ -47,20 +49,18 @@ export const Navbar = () => {
 					</NavLink>
 				</div>
 			</div>
-			{/* 
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <ul className="navbar-nav ml-auto">
-                    <span className='nav-item nav-link'>
-                        Daniel
-                    </span>
-                    <button 
-                        className = 'nav-item btn nav-link btn-danger'
-                        onClick = {onLogOut}
-                    >
-                        Logout
-                    </button>
-                </ul>
-            </div> */}
+
+			<div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
+				<ul className="navbar-nav ml-auto">
+					<span className="nav-item nav-link">{authState.username}</span>
+					<button
+						className="nav-item btn nav-link btn-danger"
+						onClick={onLogOut}
+					>
+						Logout
+					</button>
+				</ul>
+			</div>
 		</nav>
 	);
 };
