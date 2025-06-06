@@ -4,9 +4,9 @@ export const actionTypes = {
 };
 export type Actions = {
 	type: '[Auth] Login' | '[Auth] Logout';
-	payload: string;
+	payload?: string;
 };
 export type AuthState = {
 	logged: boolean;
-	username: string | null;
+	username?: string;
 };

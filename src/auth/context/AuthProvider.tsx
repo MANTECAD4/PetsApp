@@ -8,7 +8,13 @@ type Props = {
 };
 
 const init = () => {
-	const username = JSON.parse(localStorage.getItem('username') || '');
+	const rawUsername = localStorage.getItem('username');
+	let username;
+	try {
+		username = rawUsername ? JSON.parse(rawUsername) : null;
+	} catch (e) {
+		username = null;
+	}
 	return {
 		logged: !!username,
 		username,
@@ -24,8 +30,14 @@ export const AuthProvider = ({ children }: Props) => {
 		dispatch(action);
 	};
 
+	const onLogout = () => {
+		localStorage.removeItem('username');
+		const action: Actions = { type: '[Auth] Logout', payload: undefined };
+		dispatch(action);
+	};
+
 	return (
-		<AuthContext.Provider value={{ authState, onLogin }}>
+		<AuthContext.Provider value={{ authState, onLogin, onLogout }}>
 			{children}
 		</AuthContext.Provider>
 	);
