@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on "SearchPage.tsx" component Component must match a snapshot 1`] = `
+<div>
+  <h1>
+    Search
+  </h1>
+  <div
+    class=""
+  >
+    <hr />
+    <div
+      class="row"
+    >
+      <div
+        class="col-5"
+      >
+        <div
+          class="text-center"
+        >
+          <h4>
+            ˁ˚ᴥ˚ˀ
+          </h4>
+        </div>
+        <hr />
+        <form
+          class="mt-2"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-9"
+            >
+              <input
+                autocomplete="off"
+                class="form-control"
+                name="searchText"
+                placeholder="Search a pet..."
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="col-2"
+            >
+              <button
+                class="btn btn-outline-primary"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        class="col-7"
+      >
+        <div
+          class="text-center"
+        >
+          <h4>
+            龴ↀ◡ↀ龴
+          </h4>
+        </div>
+        <hr />
+        <div
+          class="alert alert-warning"
+        >
+          Search something ... 👀
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div
+    class="row rows-cols-1 row-cols-md-3 g-3"
+  />
+</div>
+`;

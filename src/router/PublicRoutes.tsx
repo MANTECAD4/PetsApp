@@ -15,6 +15,6 @@ export const PublicRoutes = ({ children }: Props) => {
 	return !authState.logged && !authState.username ? (
 		children
 	) : (
-		<Navigate to={lastPath != null ? lastPath : '/'} />
+		<Navigate to={lastPath != null ? lastPath : '/cats'} />
 	);
 };

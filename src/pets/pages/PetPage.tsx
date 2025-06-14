@@ -1,6 +1,7 @@
 import { Navigate, useNavigate, useParams } from 'react-router';
 import { getPetByNameId } from '../helpers/getPetByNameId';
 import { useMemo } from 'react';
+import { BASE_URL } from '../../utils/env';
 
 export const PetPage = () => {
 	const { name } = useParams();
@@ -16,9 +17,7 @@ export const PetPage = () => {
 		navigate(-1);
 	};
 
-	const petImgUrl = `${import.meta.env.BASE_URL}assets/pets-images/${
-		currentPet.id
-	}.jpg`;
+	const petImgUrl = `${BASE_URL()}assets/pets-images/${currentPet.id}.jpg`;
 
 	return (
 		<div className="row mt-3 animate__animated animate__fadeInLeft">
@@ -48,8 +47,7 @@ export const PetPage = () => {
 					</li>
 					<li className="list-group-item">
 						{' '}
-						<b>Grooming Needs: </b>{' '}
-						{currentPet?.groomingNeeds ? 'Yes' : 'No'}{' '}
+						<b>Grooming Needs: </b> {currentPet?.groomingNeeds ? 'Yes' : 'No'}{' '}
 					</li>
 					<li className="list-group-item">
 						{' '}

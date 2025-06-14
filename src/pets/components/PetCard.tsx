@@ -1,14 +1,13 @@
 import { Link } from 'react-router';
 import type { Pet } from '../Types/Pet';
+import { BASE_URL } from '../../utils/env';
 
 type Props = {
 	pet: Pet;
 };
 
 export const PetCard = ({ pet }: Props) => {
-	const petImgUrl = `${import.meta.env.BASE_URL}assets/pets-images/${
-		pet.id
-	}.jpg`;
+	const petImgUrl = `${BASE_URL()}assets/pets-images/${pet.id}.jpg`;
 	return (
 		<div className="col animate__animated animate__fadeIn">
 			<div className="card">

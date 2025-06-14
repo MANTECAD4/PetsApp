@@ -14,7 +14,9 @@ export const SearchPage = () => {
 
 	const pets = useMemo(() => getPetsByName(q), [q]);
 
-	const { formState, onInputChange, onResetForm } = useForm({ searchText: '' });
+	const { formState, onInputChange, onResetForm } = useForm({
+		searchText: q && typeof q === 'string' ? q : '',
+	});
 	const { searchText } = formState;
 
 	const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -23,7 +25,7 @@ export const SearchPage = () => {
 		const cleanedInput = searchText.trim().toLowerCase();
 		if (cleanedInput.length <= 1) return;
 		navigate(`?q=${cleanedInput}`);
-		onResetForm();
+		// onResetForm();
 	};
 
 	return (
